@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        #obj{
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div>
+                <!-- <div class="my-5" id="obj">Place Holder Text</div> -->
+                <textarea name="placeholder" id="obj" cols="100" rows="10" class="w-100 mt-5"></textarea>
+            </div>
+            <div class="col-12">
+                <div class="border rounded p-3 my-3">
+                    <div class="mb-3">
+                        <label for="" class="form-label">Say something</label>
+                        <textarea name="" cols="30" rows="5" class="form-control" id="text"></textarea>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="">
+                                <label for="" class="form-label">Select font</label>
+                                <select name="" id="font" class="form-select">
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                                <label for="" class="form-label">Change color</label>
+                                <input type="color" class="form-control form-control-color w-100" id="colour">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label for="" class="form-control">Font size</label>
+                            <input type="range" id="fontSize">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./texteditor.js"></script>
+</body>
+</html>
