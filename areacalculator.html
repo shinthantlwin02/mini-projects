@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+    <div class="m-5">
+        <h1 class="fw-bold mb-2">Area Calculator</h1>
+        <div class="container border m-3 p-4 mx-0 rounded-3">
+            <div class="d-flex">
+                <h1 class="me-auto">Result: <span id="result"></span> </h1>
+                <button class="btn btn-outline-primary px-3 me-2" id="store">Store</button>
+                <button class="btn btn-outline-danger px-3" id="clear">Clear</button>
+            </div>
+            <hr>
+            <form action="" class="mb-3" id="form">
+                <div class="d-flex align-items-end">
+                    <div class="col me-2">
+                        <label for="" class="form-label">Width</label>
+                        <input type="number" class="form-control" id="width">
+                    </div>
+                    <div class="col me-2">
+                        <label for="" class="form-label">Breadth</label>
+                        <input type="number" class="form-control" id="breadth">
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-primary w-100" id="calcBtn">Calculate</button>
+                    </div>
+                </div>
+            </form>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Width</th>
+                        <th>Breadth</th>
+                        <th>Area</th>
+                    </tr>
+                </thead>
+                <tbody id="lists">
+                
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        const result = document.querySelector("#result");
+        const width = document.querySelector("#width");
+        const breadth = document.querySelector("#breadth");
+        const store = document.querySelector("#store");
+        const clear = document.querySelector("#clear");
+        const form = document.querySelector("#form");
+        const list = document.querySelector("#lists");
+
+        form.onsubmit = function(event){
+            const area = width.valueAsNumber * breadth.valueAsNumber;
+            result.innerText = area + " sqft";
+            event.preventDefault();
+        }
+
+        clear.onclick = ()=>{
+            result.innerText = null;
+            form.reset();
+        }
+
+        store.onclick = ()=>{
+            const tr = document.createElement("tr");
+            list.append(tr);
+            tr.innerHTML = `
+            <td>${width.valueAsNumber}</td>
+            <td>${breadth.valueAsNumber}</td>
+            <td>${result.innerText}</td>`
+
+            result.innerText = null;
+            form.reset();
+        }
+    </script>
+</body>
+</html>
